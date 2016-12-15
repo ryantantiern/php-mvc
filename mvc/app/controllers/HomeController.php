@@ -4,7 +4,7 @@ class HomeController extends Controller
 {
 	public function index ($name = '')
 	{	
-		echo 'home index page';
+
 	}
 
 	public function initModel($model = '', $data = '')

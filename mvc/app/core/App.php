@@ -11,7 +11,7 @@ class App
 
 	protected $params = [];	 
 
-	protected $database = [
+	public $DB = [
 		'CONNECTION' => 'mysql',
 		'PORT' => '3306',
 		'HOST' => 'localhost',
@@ -47,6 +47,18 @@ class App
 		$this->params = $url ? array_values($url) : []; // Set Params if it exists
 
 		call_user_func_array([$this->controller, $this->method], $this->params);
+
+/*		$db = Database::connect($this->DB);
+		$result = $db->query('SELECT * from users');
+		echo '<pre>';
+			print_r(json_encode($result->fetchAll(PDO::FETCH_ASSOC)));
+		echo '</pre>';*/
+
+	/*	foreach ($db->query('SELECT * from users') as $row) {
+			print_r($row);
+		}*/
+		$db = null;
+		
 
 	}
 
